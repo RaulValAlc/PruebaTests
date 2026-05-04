@@ -18,6 +18,13 @@ public class Usuario {
     private int edad;
     private String correo;
 
+    public Usuario(String usuario, String contrasena, int edad, String correo) {
+        this.usuario = usuario;
+        this.contrasena = contrasena;
+        this.edad = edad;
+        this.correo = correo;
+    }
+
     public boolean validarUsuario() {
         if (usuario == null) return false;
         return usuario.matches(".{3,5}");
