@@ -116,115 +116,113 @@ class UsuarioTest {
 
     // ---- TESTS DE VALORES LÍMITE ----
 
-    @Test
-    @DisplayName("TC16")
-    void tc16_VL01_VL05() {
+    @Test @DisplayName("TC16") void TC16() {
         Usuario u = new Usuario("abc", "Abcdef12", 18, "usuario@ejemplo.com");
         assertTrue(u.validarRegistro());
     }
 
-    @Test
-    @DisplayName("TC17")
-    void tc17_VL01_VL06() {
-        Usuario u = new Usuario("abc", "Abcdef12Abcdef12Abcd", 18, "usuario@ejemplo.com");
+    @Test @DisplayName("TC17") void TC17() {
+        Usuario u = new Usuario("abcde", "Abcdef12Abcdef12Abcd", 18, "usuario@ejemplo.com");
         assertTrue(u.validarRegistro());
     }
 
-    @Test
-    @DisplayName("TC18")
-    void tc18_VL01_VL07() {
-        Usuario u = new Usuario("abc", "Abcdef1", 18, "usuario@ejemplo.com");
+    @Test @DisplayName("TC18") void TC18() {
+        Usuario u = new Usuario("ab", "Abcdef1", 18, "usuario@ejemplo.com");
         assertFalse(u.validarRegistro());
     }
 
-    @Test
-    @DisplayName("TC19")
-    void tc19_VL01_VL08() {
-        Usuario u = new Usuario("abc", "Abcdef12Abcdef12Abcde", 18, "usuario@ejemplo.com");
+    @Test @DisplayName("TC19") void TC19() {
+        Usuario u = new Usuario("abcdef", "Abcdef12Abcdef12Abcde", 18, "usuario@ejemplo.com");
         assertFalse(u.validarRegistro());
     }
 
-    @Test
-    @DisplayName("TC20")
-    void tc20_VL02_VL05() {
-        Usuario u = new Usuario("abc", "Abcdef12", 19, "usuario@ejemplo.com");
+    @Test @DisplayName("TC20") void TC20() {
+        Usuario u = new Usuario("abcd", "Abcdef12", 19, "usuario@ejemplo.com");
         assertTrue(u.validarRegistro());
     }
 
-    @Test
-    @DisplayName("TC21")
-    void tc21_VL02_VL06() {
-        Usuario u = new Usuario("abc", "Abcdef12Abcdef12Abcd", 19, "usuario@ejemplo.com");
-        assertTrue(u.validarRegistro());
-    }
-
-    @Test
-    @DisplayName("TC22")
-    void tc22_VL02_VL07() {
-        Usuario u = new Usuario("abc", "Abcdef1", 19, "usuario@ejemplo.com");
+    @Test @DisplayName("TC21") void TC21() {
+        Usuario u = new Usuario("ab", "Abcdef12Abcdef12Abcd", 19, "usuario@ejemplo.com");
         assertFalse(u.validarRegistro());
     }
 
-    @Test
-    @DisplayName("TC23")
-    void tc23_VL02_VL08() {
+    @Test @DisplayName("TC22") void TC22() {
+        Usuario u = new Usuario("abcdef", "Abcdef1", 19, "usuario@ejemplo.com");
+        assertFalse(u.validarRegistro());
+    }
+
+    @Test @DisplayName("TC23") void TC23() {
         Usuario u = new Usuario("abc", "Abcdef12Abcdef12Abcde", 19, "usuario@ejemplo.com");
         assertFalse(u.validarRegistro());
     }
 
-    @Test
-    @DisplayName("TC24")
-    void tc24_VL03_VL05() {
-        Usuario u = new Usuario("abc", "Abcdef12", 17, "usuario@ejemplo.com");
+    @Test @DisplayName("TC24") void TC24() {
+        Usuario u = new Usuario("ab", "Abcdef12", 17, "usuario@ejemplo.com");
         assertFalse(u.validarRegistro());
     }
 
-    @Test
-    @DisplayName("TC25")
-    void tc25_VL03_VL06() {
+    @Test @DisplayName("TC25") void TC25() {
         Usuario u = new Usuario("abc", "Abcdef12Abcdef12Abcd", 17, "usuario@ejemplo.com");
         assertFalse(u.validarRegistro());
     }
 
-    @Test
-    @DisplayName("TC26")
-    void tc26_VL03_VL07() {
-        Usuario u = new Usuario("abc", "Abcdef1", 17, "usuario@ejemplo.com");
+    @Test @DisplayName("TC26") void TC26() {
+        Usuario u = new Usuario("abcde", "Abcdef1", 17, "usuario@ejemplo.com");
         assertFalse(u.validarRegistro());
     }
 
-    @Test
-    @DisplayName("TC27")
-    void tc27_VL03_VL08() {
-        Usuario u = new Usuario("abc", "Abcdef12Abcdef12Abcde", 17, "usuario@ejemplo.com");
+    @Test @DisplayName("TC27") void TC27() {
+        Usuario u = new Usuario("abcdef", "Abcdef12Abcdef12Abcde", 17, "usuario@ejemplo.com");
         assertFalse(u.validarRegistro());
     }
 
-    @Test
-    @DisplayName("TC28")
-    void tc28_VL04_VL05() {
-        Usuario u = new Usuario("abc", "Abcdef12", 0, "usuario@ejemplo.com");
+    @Test @DisplayName("TC28") void TC28() {
+        Usuario u = new Usuario("abcdef", "Abcdef12", 0, "usuario@ejemplo.com");
         assertFalse(u.validarRegistro());
     }
 
-    @Test
-    @DisplayName("TC29")
-    void tc29_VL04_VL06() {
+    @Test @DisplayName("TC29") void TC29() {
         Usuario u = new Usuario("abc", "Abcdef12Abcdef12Abcd", 0, "usuario@ejemplo.com");
         assertFalse(u.validarRegistro());
     }
 
-    @Test
-    @DisplayName("TC30")
-    void tc30_VL04_VL07() {
-        Usuario u = new Usuario("abc", "Abcdef1", 0, "usuario@ejemplo.com");
+    @Test @DisplayName("TC30") void TC30() {
+        Usuario u = new Usuario("abcd", "Abcdef1", 0, "usuario@ejemplo.com");
         assertFalse(u.validarRegistro());
     }
 
-    @Test
-    @DisplayName("TC31")
-    void tc31_VL04_VL08() {
-        Usuario u = new Usuario("abc", "Abcdef12Abcdef12Abcde", 0, "usuario@ejemplo.com");
+    @Test @DisplayName("TC31") void TC31() {
+        Usuario u = new Usuario("ab", "Abcdef12Abcdef12Abcde", 0, "usuario@ejemplo.com");
+        assertFalse(u.validarRegistro());
+    }
+
+    @Test @DisplayName("TC32") void TC32() {
+        Usuario u = new Usuario("abcde", "Abcdef12", 18, "usuario@ejemplo.com");
+        assertTrue(u.validarRegistro());
+    }
+
+    @Test @DisplayName("TC33") void TC33() {
+        Usuario u = new Usuario("abc", "Abcdef12Abcdef12Abcd", 19, "usuario@ejemplo.com");
+        assertTrue(u.validarRegistro());
+    }
+
+    @Test @DisplayName("TC34") void TC34() {
+        Usuario u = new Usuario("ab", "Abcdef1", 17, "usuario@ejemplo.com");
+        assertFalse(u.validarRegistro());
+    }
+
+    @Test @DisplayName("TC35") void TC35() {
+        Usuario u = new Usuario("abcdef", "Abcdef12Abcdef12Abcde", 0, "usuario@ejemplo.com");
+        assertFalse(u.validarRegistro());
+    }
+
+    @Test @DisplayName("TC36") void TC36() {
+        Usuario u = new Usuario("abcd", "Abcdef1", 18, "usuario@ejemplo.com");
+        assertFalse(u.validarRegistro());
+    }
+
+    @Test @DisplayName("TC37") void TC37() {
+        Usuario u = new Usuario("abcde", "Abcdef12Abcdef12Abcde", 19, "usuario@ejemplo.com");
         assertFalse(u.validarRegistro());
     }
 
